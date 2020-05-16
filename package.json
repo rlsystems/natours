@@ -1,0 +1,23 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "Landing Page For Natours",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rlsystems/natours.git"
+  },
+  "author": "Ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rlsystems/natours/issues"
+  },
+  "homepage": "https://github.com/rlsystems/natours#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  },
+  "dependencies": {}
+}
