@@ -1,0 +1,19 @@
+
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  /*This defines what 1 rem is -- root size is 16px, we want 10px for rem usage, in percent thats 62.5% */
+}
+
+body {
+    box-sizing: border-box;
+
+}
