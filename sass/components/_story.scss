@@ -9,9 +9,20 @@
     font-size: $default-font-size;
     transform: skewX(-12deg);
 
-    & > * { //skew all opposite direction 
-        transform: skewX(12deg); //because transforms are being applied later, they take precendence, and you need to set this to the shape and text also
+    @include respond(tab-port) {
+        width: 100%;
+        padding: 4rem;
+        padding-left: 7rem;
     }
+
+    @include respond(phone) {
+        transform: skewX(0);
+    }
+
+
+    // & > * { //skew all opposite direction 
+    //     transform: skewX(12deg); //because transforms are being applied later, they take precendence, and you need to set this to the shape and text also
+    // }
 
     &__shape {
         width: 15rem;

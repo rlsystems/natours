@@ -11,9 +11,34 @@
 html {
   font-size: 62.5%;
   /*This defines what 1 rem is -- root size is 16px, we want 10px for rem usage, in percent thats 62.5% */
+
+  // @include respond(phone) { -- not needed
+  //   font-size: 50%;
+  // }
+
+  //media quieries dont add specificity, their order is important
+  //for desktop-first (texting max width) larger sizes should be on top
+  
+  @include respond(tab-land) { //width <900?
+    font-size: 56.25%; //1rem = 9px, 9/16 = 56.25%
+  }
+
+  @include respond(tab-port) { //width < 600?
+    font-size: 50%; //1rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12px, 12/16 = 75%
+  }
 }
 
 body {
     box-sizing: border-box;
+    padding: 3rem;
+
+    @include respond(tab-land) { //make white border around page disappear
+      padding: 0;
+    }
 
 }
+
