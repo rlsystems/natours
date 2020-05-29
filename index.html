@@ -9,6 +9,7 @@
       rel="stylesheet"
     />
 
+    <!-- icons css would be removed and concatenated in build -->
     <link rel="stylesheet" href="css/icon-font.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
@@ -18,7 +19,7 @@
   <body>
     <!-- Navigation -->
     <div class="navigation">
-      <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+      <input type="checkbox" class="navigation__checkbox" id="navi-toggle" />
 
       <label for="navi-toggle" class="navigation__button">
         <span class="navigation__icon">
@@ -30,13 +31,28 @@
 
       <nav class="navigation__nav">
         <ul class="navigation__list">
-          <li class="navigation__item"><a href="#" class="navigation__link"><span>01</span>About Natours</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link"><span>02</span>Your benefits</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link"><span>03</span>Popular tours</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link"><span>04</span>Stories</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__link"><span>05</span>Book now</a></li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>01</span>About Natours</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>02</span>Your benefits</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"
+              ><span>03</span>Popular tours</a
+            >
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>04</span>Stories</a>
+          </li>
+          <li class="navigation__item">
+            <a href="#" class="navigation__link"><span>05</span>Book now</a>
+          </li>
         </ul>
-
       </nav>
 
       <!-- End Navigation -->
@@ -51,7 +67,9 @@
           <span class="heading-primary--main">Outdoors</span>
           <span class="heading-primary--sub">is where life happens</span>
         </h1>
-        <a href="#section-tours" class="btn btn--white btn--animated">Discover our Tours</a>
+        <a href="#section-tours" class="btn btn--white btn--animated"
+          >Discover our Tours</a
+        >
       </div>
     </header>
     <main>
@@ -81,8 +99,31 @@
             <a href="#" class="btn-text">Learn More &rarr;</a>
           </div>
           <div class="col-1-of-2">
+            <!-- This is resolution switching -->
             <div class="composition">
               <img
+                srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+                sizes="(max-width: 900px) 20vw, (max-width: 600px) 300px"
+                alt="photo 1"
+                class="composition__photo composition__photo--p1"
+                src="img/nat-1-large.jpg"
+              />
+
+              <img
+                srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w"
+                sizes="(max-width: 900px) 20vw, (max-width: 600px) 300px"
+                alt="photo 2"
+                class="composition__photo composition__photo--p2"
+                src="img/nat-2-large.jpg"
+              />
+              <img
+                srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w"
+                sizes="(max-width: 900px) 20vw, (max-width: 600px) 300px"
+                alt="photo 3"
+                class="composition__photo composition__photo--p3"
+                src="img/nat-3-large.jpg"
+              />
+              <!-- <img
                 src="img/nat-1-large.jpg"
                 alt=""
                 class="composition__photo composition__photo--p1"
@@ -96,7 +137,7 @@
                 src="img/nat-3-large.jpg"
                 alt=""
                 class="composition__photo composition__photo--p3"
-              />
+              /> -->
             </div>
           </div>
         </div>
@@ -408,7 +449,24 @@
 
     <footer class="footer">
       <div class="footer__logo-box">
-        <img src="img/logo-green-2x.png" alt="logo" class="footer__logo" />
+        <!-- This is how you do art switching - the 1x and 2x is density switching-->
+        <picture class="footer__logo">
+          <source
+            srcset="
+              img/logo-green-small-1x.png 1x,
+              img/logo-green-small-2x.png 2x
+            "
+            media="(max-width: 37.5em)"
+          />
+          <img
+            srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x"
+            alt="logo" 
+            src="img/logo-green-2x.png"
+           
+          />
+          <!-- the source attribute is just a falback -->
+        </picture>
+        <!-- This is how you do density switching -->
       </div>
       <div class="row">
         <div class="col-1-of-2">
@@ -421,25 +479,22 @@
                 <a href="#" class="footer__link">Contact us</a>
               </li>
               <li class="footer__item">
-                
                 <a href="#" class="footer__link">Careers</a>
-                
               </li>
               <li class="footer__item">
-               
                 <a href="#" class="footer__link">Privacy policy</a>
               </li>
               <li class="footer__item">
-                
                 <a href="#" class="footer__link">Terms</a>
               </li>
             </ul>
           </div>
-          
         </div>
         <div class="col-1-of-2">
           <p class="footer__copyright">
-            Built by <a href="#" class="footer__link">Ryan</a>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem, nesciunt facilis. Itaque reiciendis iste eius odio eaque quis minima! 
+            Built by <a href="#" class="footer__link">Ryan</a>. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Autem, nesciunt
+            facilis. Itaque reiciendis iste eius odio eaque quis minima!
           </p>
         </div>
       </div>
@@ -447,17 +502,28 @@
     <div class="popup" id="popup">
       <div class="popup__content">
         <div class="popup__left">
-          <img src="img/nat-8.jpg" alt="" class="popup__img">
-          <img src="img/nat-9.jpg" alt="" class="popup__img">
+          <img src="img/nat-8.jpg" alt="" class="popup__img" />
+          <img src="img/nat-9.jpg" alt="" class="popup__img" />
         </div>
         <div class="popup__right">
           <a href="#section-tours" class="popup__close">&times;</a>
-         <h2 class="heading-secondary u-margin-bottom-small">Start booking now</h2>
-         <h3 class="heading-tertiary u-margin-bottom-small">Important &ndash; Please read the terms before booking</h3>
-         <p class="popup__text">
-           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam eligendi, tempore praesentium repellendus soluta ducimus aliquid, nostrum quaerat nihil fugiat consequatur voluptatum vel nesciunt excepturi quis, debitis quos eius! Mollitia! soluta ducimus aliquid, nostrum quaerat nihil fugiat consequatur voluptatum vel nesciunt excepturi quis, debitis quos eius! Mollitia! soluta ducimus aliquid, nostrum quaerat nihil fugiat consequatur voluptatum vel nesciunt excepturi quis, debitis quos eius! Mollitia!
-         </p>
-         <a href="#" class="btn btn--green">Book Now</a>
+          <h2 class="heading-secondary u-margin-bottom-small">
+            Start booking now
+          </h2>
+          <h3 class="heading-tertiary u-margin-bottom-small">
+            Important &ndash; Please read the terms before booking
+          </h3>
+          <p class="popup__text">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam
+            eligendi, tempore praesentium repellendus soluta ducimus aliquid,
+            nostrum quaerat nihil fugiat consequatur voluptatum vel nesciunt
+            excepturi quis, debitis quos eius! Mollitia! soluta ducimus aliquid,
+            nostrum quaerat nihil fugiat consequatur voluptatum vel nesciunt
+            excepturi quis, debitis quos eius! Mollitia! soluta ducimus aliquid,
+            nostrum quaerat nihil fugiat consequatur voluptatum vel nesciunt
+            excepturi quis, debitis quos eius! Mollitia!
+          </p>
+          <a href="#" class="btn btn--green">Book Now</a>
         </div>
       </div>
     </div>

@@ -37,7 +37,7 @@ Order: Base + typography > general layout + grid > page layout > components
 1em = 16px -- Use em for media queries... 1em will always be 16px with media queries
 */
 
-@mixin respond($breakpoint) {
+@mixin respond($breakpoint) { 
     @if $breakpoint == phone {
         @media (max-width: 37.5em) { @content }; //600px
     }

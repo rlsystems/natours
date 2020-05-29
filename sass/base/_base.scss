@@ -14,7 +14,7 @@ html {
 
   // @include respond(phone) { -- not needed
   //   font-size: 50%;
-  // }
+  // } 
 
   //media quieries dont add specificity, their order is important
   //for desktop-first (texting max width) larger sizes should be on top
@@ -40,5 +40,10 @@ body {
       padding: 0;
     }
 
+}
+
+::selection { //change selected text colors
+  background-color: $color-primary;
+  color: $color-white;
 }
 
